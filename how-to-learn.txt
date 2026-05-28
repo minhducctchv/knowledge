@@ -1,8 +1,13 @@
+---
+created_at:
+[needs_review]
+review_#n_at:
+---
 Study method:
 1. Read title in roadmap
-2. Ask AI to provide example
-3. Run/debug
+2. Uses & methods
+    - What does it do?
+    - How to do it: Ask AI to provide example
+3. How does it work? => Run/debug
 4. Ask AI about what you don't understand
 5. Rewrite it yourself
-
-(Mark the knowledge that needs to be reviewed)
