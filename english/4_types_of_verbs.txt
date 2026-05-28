@@ -1,0 +1,7 @@
+4 types of verbs:
+- do
+- doing
+    + gerund
+    + present participle (hiện tại phân từ => hành động đang diễn ra)
+- to do: a goal to do something (in the future)
+- to doing: The concept does not exist, we need to consider the semantics

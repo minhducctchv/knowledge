@@ -1,0 +1,8 @@
+Study method:
+1. Read title in roadmap
+2. Ask AI to provide example
+3. Run/debug
+4. Ask AI about what you don't understand
+5. Rewrite it yourself
+
+(Mark the knowledge that needs to be reviewed)
