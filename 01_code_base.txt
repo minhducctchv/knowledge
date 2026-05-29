@@ -1,0 +1,6 @@
+1. Problem Solving
+2. Software Design/Architecture (In one project: folder, service...)
+3. Clean code => SOLID
+4. Design Patterns
+5. Database (API Design nhỏ - riêng)
+6. System design (System: microservice, kafka, redis...)
