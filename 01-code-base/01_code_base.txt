@@ -1,0 +1,26 @@
+---
+created_at: 2026-05-30
+needs_review
+---
+1. Problem Solving
+    - Ask question early
+        + list all unclear points
+        + list all edge cases
+    - Look the existing code
+    - Design a solution
+        1. define input -> process -> output
+        2. draw flow diagram
+        3. break into small tasks
+        4. choose code structure: class, function, file, service, modules...
+    - Handle edge cases and errors
+        empty, large data, slow networks...
+2. Software Design/Architecture (In one project: folder, service...)
+3. Clean code => SOLID
+    1. Single responsibility principle
+    2. Open/Close principle
+    3. Liskov substitution principle
+    4. Interface Segregation Principle
+    5. Dependency Inversion Principle
+4. Design Patterns
+5. Database (API Design nhỏ - riêng)
+6. System design (System: microservice, kafka, redis...)

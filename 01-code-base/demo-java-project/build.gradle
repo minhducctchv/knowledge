@@ -1,0 +1,36 @@
+/*
+ * Build script for a plain Java application (Java core project).
+ */
+plugins {
+    // The 'application' plugin lets us build and run a Java app.
+    id 'application'
+}
+
+repositories {
+    // Download dependencies from Maven Central.
+    mavenCentral()
+}
+
+dependencies {
+    // Use JUnit 5 for writing and running tests.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+java {
+    // Use a Java 21 toolchain. Gradle will download a matching JDK
+    // automatically if one is not already installed.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+application {
+    // The class that contains the main() method.
+    mainClass = 'com.example.demo.App'
+}
+
+tasks.named('test') {
+    // Tell Gradle to run tests using the JUnit 5 platform.
+    useJUnitPlatform()
+}

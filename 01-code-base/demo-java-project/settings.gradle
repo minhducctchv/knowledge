@@ -1,0 +1,5 @@
+/*
+ * This file configures the Gradle build.
+ * 'rootProject.name' sets the name of the project.
+ */
+rootProject.name = 'demo-java-project'
