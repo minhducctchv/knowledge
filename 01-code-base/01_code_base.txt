@@ -58,6 +58,15 @@ needs_review
             * tên bảng số nhiều: products
             * FK: tên bảng số ít + _id: product_id
             * boolean: is_ hoặc has_
-        + index => TODO: XEM CÁCH ĐÁNH HỢP LÝ
+        + index:
+            * đánh theo query cần tối ưu
+            * nên đánh composite index thay vì nhiều single index
+            * leftmost prefix rule: index (A,B,C) => tác đụng cho query: A, A+B, A+B+C
+            * 3-5 index mỗi bảng là vừa (đánh nhiều write chậm)
+            * thứ tự: equality (>) -> (>, <, Between) -> order by (TODO: check xem thứ tự trong where có ảnh hưởng ko)
+            * dùng EXPLAIN để kiểm tra
+            * đánh index khi: data nhiều > 10000 rows, cột dùng nhiều trong where, join, order by, group by, ko đánh cho cột ít distinct value, hay bị update
+            * TODO: Nguyên lý hoạt đôngj của index
         + Soft Delete: TODO: XEM CÓ PATTERN NÀO TỐT
+    - 
 6. System design (System: microservice, kafka, redis...)
