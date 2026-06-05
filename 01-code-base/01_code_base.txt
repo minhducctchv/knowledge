@@ -18,9 +18,46 @@ needs_review
 3. Clean code => SOLID
     1. Single responsibility principle
     2. Open/Close principle
+        - nguyên tắc: open for extension, close for modification
+        - các bước thực hiện:
+            + xác định phần thay đổi/mở rộng
+                => interface, abstract function
+                => class implement interface, abstract function
+            + Class sử dụng chỉ phụ thuộc vào Interface
+        - Interface: là cái khuôn, Class là cái ruột
+        - Abstract Class: khuôn có thể chứa 1 phần ruột
+            - ko tạo được object Abstract Class (giống Interface)
+            - Implement & extends:
+                + impletment: dành cho interface (1 or nhiều)
+                + extends: cho class (chỉ 1)
+                    * Class thường extends Abstract Class buộc phải override các abstract method
     3. Liskov substitution principle
+        Nếu class B là con của class A thì có thể dùng B ở thay cho A ở bất kỳ chỗ nào, đảm bảo chương trình vẫn chạy đúng
     4. Interface Segregation Principle
+        không ép Class implement các method mà nó không cần (=> không gộp quá nhiều loại method vào 1 interface)
     5. Dependency Inversion Principle
+        - module cấp cao không phụ thuộc module cấp thấp => nên: cả 2 phụ thuộc vào Abstract
+            + module cấp cao dùng thay thế nhiều module cấp thấp khác nhau
+            + tạo abstract (interface) cho các module thấp đó
+            + dùng interface trong module cấp cao
+        - abstract không phụ thuộc vào chi tiết => nên: chi tiết phụ thuộc vào abstract
+            abstract chỉ chứa các method chung cho tất cả các class implement nó
 4. Design Patterns
+    - nó là bài báo đọc cho biết, đọc nhiều biết nhiều
+    - trải nghiệm code nhiều => đọc báo mới hiểu
+    - đọc project của người khác (nhờ AI đọc)
 5. Database (API Design nhỏ - riêng)
+    - Database
+        + Chuẩn hoá
+            * 1NF: Mỗi cột chứa 1 giá trị duy nhất (Object, List Converted cũng ko đc)
+            * 2NF: mọi cột phải phụ thuộc hoàn toàn vào cột PK
+            * 3NF: 2NF + không có phụ thuộc bắc cầu
+        + PK: mọi bảng đều phải có PK
+        + FK: Constraint cho FK là để đảm bảo toàn vẹn dữ liệu (referential integrity)
+        + Naming covention:
+            * tên bảng số nhiều: products
+            * FK: tên bảng số ít + _id: product_id
+            * boolean: is_ hoặc has_
+        + index => TODO: XEM CÁCH ĐÁNH HỢP LÝ
+        + Soft Delete: TODO: XEM CÓ PATTERN NÀO TỐT
 6. System design (System: microservice, kafka, redis...)
