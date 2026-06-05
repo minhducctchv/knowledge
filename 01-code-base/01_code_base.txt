@@ -67,6 +67,9 @@ needs_review
             * dùng EXPLAIN để kiểm tra
             * đánh index khi: data nhiều > 10000 rows, cột dùng nhiều trong where, join, order by, group by, ko đánh cho cột ít distinct value, hay bị update
             * TODO: Nguyên lý hoạt đôngj của index
-        + Soft Delete: TODO: XEM CÓ PATTERN NÀO TỐT
-    - 
+        + Soft Delete
+            * @SQLDelete + @Where của hibernate
+            * Repository Pattern với Base repository
+            * Event Sourcing / Audit Trail Pattern (TODO: tìm hiểu xem)
+    - API Design
 6. System design (System: microservice, kafka, redis...)
