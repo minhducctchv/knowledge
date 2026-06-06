@@ -46,7 +46,7 @@ needs_review
     - nó là bài báo đọc cho biết, đọc nhiều biết nhiều
     - trải nghiệm code nhiều => đọc báo mới hiểu
     - đọc project của người khác (nhờ AI đọc)
-5. Database (API Design nhỏ - riêng)
+5. Database & API design
     - Database
         + Chuẩn hoá
             * 1NF: Mỗi cột chứa 1 giá trị duy nhất (Object, List Converted cũng ko đc)
@@ -63,7 +63,7 @@ needs_review
             * nên đánh composite index thay vì nhiều single index
             * leftmost prefix rule: index (A,B,C) => tác đụng cho query: A, A+B, A+B+C
             * 3-5 index mỗi bảng là vừa (đánh nhiều write chậm)
-            * thứ tự: equality (>) -> (>, <, Between) -> order by (TODO: check xem thứ tự trong where có ảnh hưởng ko)
+            * thứ tự: equality (>) -> (>, <, Between) -> order by (thứ tự trong where ko ảnh hưởng ko)
             * dùng EXPLAIN để kiểm tra
             * đánh index khi: data nhiều > 10000 rows, cột dùng nhiều trong where, join, order by, group by, ko đánh cho cột ít distinct value, hay bị update
             * TODO: Nguyên lý hoạt đôngj của index
@@ -72,4 +72,42 @@ needs_review
             * Repository Pattern với Base repository
             * Event Sourcing / Audit Trail Pattern (TODO: tìm hiểu xem)
     - API Design
+        + dùng danh từ số nhiều (ko dùng động từ): /users, /orders
+        + HTTP method:
+            * GET - lấy data
+            * POST - tạo mới
+            * PUT - update toàn bộ
+            * PATCH - update 1 phần
+            * DELETE - Xóa
+        + kebab-case
+        + nested thể hiện quan hệ: /users/{userId}/orders, /users/{userId}/status
+        + Status code:
+            * 200 - thành công
+            * 201 - created thành công
+            * 204 - thành công no body
+            * 400 - Request sai
+            * 401 - unauthorized
+            * 403 - không có quyền (forbidden)
+            * 404 -  not found
+            * 409 - xung đột dữ liệu
+            * 422 - dữ liệu không hợp lệ
+            * 500 - Lỗi server
+        + body json format
+            + thành công
+                * message
+                * data
+            + lỗi 
+                * error
+                    - code
+                    - message
+                    - details
+            + phân trang
+                * data
+                * pagination
+                    - page: 1
+                    - limit: 10
+                    - total: 100
+        + version: /api/v1 (hữu ích khi update app, khi chuyển sang v2 thì các app/client call vào v1 vẫn hoạt động bình thường)
 6. System design (System: microservice, kafka, redis...)
+    - redis
+        + áp dụng cho thanh toán (ko bị duplicate nhiều lần), lock khi mua 2 user cùng mua order cuối...
